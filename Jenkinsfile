@@ -22,5 +22,9 @@ pipeline {
                 sh 'npm test'
             }
         }
+        warnError('Testing Failed!') {
+            echo 'Running tests...'
+            sh 'exit 1'
+        }
     }
 }
